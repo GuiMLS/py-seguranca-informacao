@@ -5,7 +5,7 @@ conexao = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print("Cliente Socket Criado com sucesso!")
 
 host = 'localhost'
-porta = 5433
+porta = 5432
 mensagem = "Olá servidor!"
 
 try:
@@ -14,7 +14,7 @@ try:
 
     dados, servidor = conexao.recvfrom(4096)
     dados = dados.decode()
-    print(f"Cliente: Dados recebidos - {dados}")
+    print(f"Cliente: Dados recebidos -> {dados}")
 finally:
     print("Cliente: Fechando a Conexão")
     conexao.close()
